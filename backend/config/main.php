@@ -15,12 +15,12 @@ return [
     'modules' => [
         'permit' => [
             'class' => 'developeruz\db_rbac\Yii2DbRbac',
-           // 'layout' => '//admin',
+            // 'layout' => '//admin',
             'params' => [
                 'userClass' => 'common\models\User',
                 'accessRoles' => ['admin']
             ]
-    ],
+        ],
         'yii2images' => [
             'class' => 'rico\yii2images\Module',
             //be sure, that permissions ok
@@ -33,15 +33,15 @@ return [
         ],
     ],
     'components' => [
-	/*	'view' => [
-			'theme' => [
-				'pathMap' => [
-					'@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
-					],
-			],
-		],*/
+        /*	'view' => [
+                'theme' => [
+                    'pathMap' => [
+                        '@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
+                        ],
+                ],
+            ],*/
         'request' => [
-            'baseUrl'=>'/admin',
+            'baseUrl' => '/admin',
             'csrfParam' => '_csrf-backend',
         ],
         'user' => [
@@ -65,7 +65,7 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
@@ -87,7 +87,7 @@ return [
                 'category/<id:\d+>' => 'category/view',
                 'product/<id:\d+>' => 'product/view',
                 'search' => 'category/search',
-             ],
+            ],
         ],
         'as AccessBehavior' => [
             'class' => \developeruz\db_rbac\behaviors\AccessBehavior::className(),
@@ -105,7 +105,7 @@ return [
                 ]
         ]],
 
-            'controllerMap' => [
+    'controllerMap' => [
         'elfinder' => [
             'class' => 'mihaildev\elfinder\Controller',
             'access' => ['@'], //глобальный доступ к фаил менеджеру @ - для авторизорованных , ? - для гостей , чтоб открыть всем ['@', '?']
@@ -114,7 +114,7 @@ return [
                 [
                     //'baseUrl'=>'/',
                     //'basePath'=>'@webroot',
-                    'access' => ['read' => 'admin', 'write' =>'admin'],
+                    'access' => ['read' => 'admin', 'write' => 'admin'],
                     'path' => '/../../frontend/web/images',
                     'name' => 'Images'
                 ]/*,
